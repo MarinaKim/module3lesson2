@@ -3,6 +3,7 @@
 #include <iostream>
 #include<stdint.h>
 #include<math.h>
+#include<windows.h>
 using namespace std;
 char u;
 void main()
@@ -351,13 +352,14 @@ start:
 		
 	}
 	break;
+	case 9:{
+		HANDLE hConsole;
+		int k = 88;
+		hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+		SetConsoleTextAttribute(hConsole, k);
+		cout << k << "I WANT TO BE NICE TODAY" << endl;
 	
-	HANDLE hConsole;
-	int k = 88;
-	hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleTextAttribute(hConsole, k);
-	cout << k << "I WANT TO BE NICE TODAY" << endl;
-	return 0;
-
+	}
+	break;
 	}
 	}
